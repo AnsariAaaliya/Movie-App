@@ -43,9 +43,9 @@ function App() {
    
     <div className="movie-list">
     {movies.map(({name , poster, summary})=>(
-      <Movie name={name} poster={poster} summary={summary} />
+      <Movie name={name} poster={poster} summary={summary}/>
     ))}
-    <Movie />
+   
     </div>
     </>
     );
