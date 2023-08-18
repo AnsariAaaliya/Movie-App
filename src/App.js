@@ -49,7 +49,7 @@ function App() {
               },
                 {
                   name: "Fukrey-3",
-                  poster: "https://images.hindustantimes.com/img/2023/01/24/1600x900/fukrey_3_1674546968737_1674546968963_1674546968963.jpg",
+                  poster: "https://th.bing.com/th/id/OIP.QkQ-5LleCql-n9yA0H-IHgAAAA?pid=ImgDet&rs=1",
                   summary: "The new posters of Fukrey 3 are out and confirm the return of the original cast of Richa Chadha, Pulkit Samrat, Varun Sharma, Manjot Singh and Pankaj Tripathi",
                 },
   ];
