@@ -68,6 +68,8 @@
   margin: 5%;
   margin-left: 5%;
   color: white;
+  text-decoration-color: white;
+  
 
 }
 
@@ -82,3 +84,14 @@
   gap: 3rem;
   justify-items: center;
 }
+.text{
+  text-decoration:none;
+}
+.box{
+  height: 30px;
+}
+
+.co{
+  color: white;
+}
+ 
