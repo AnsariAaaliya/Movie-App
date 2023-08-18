@@ -37,6 +37,21 @@ function App() {
             poster: "https://th.bing.com/th/id/OIP.DBAPBosQlB2pKZekLHZOiAHaEK?w=328&h=184&c=7&r=0&o=5&dpr=1.3&pid=1.7",
             summary: "A few days earlier, reports surfaced that KGF may have five sequels. Hombale Films reportedly wants to develop KGF into a Bond-style series.",
             },
+            {
+              name: "Dream girl 2",
+              poster: "https://resize.indiatvnews.com/en/resize/newbucket/730_-/2023/02/sadsssssssaxszass-1676309040.jpg",
+              summary: "Ayushmann Khurrana unveiled the very first poster of his upcoming film Dream Girl 2, a perpetual sequel to Raaj Shaandilyaa's 2019 directorial Dream Girl."
+            },
+              {
+                name: "Tiger-3",
+                poster: "https://i.ytimg.com/vi/ftwe3dSiK94/maxresdefault.jpg",
+                summary: "Tiger 3 is an upcoming Indian Hindi-language action thriller film directed by Maneesh Sharma and produced by Aditya Chopra. The film stars Salman Khan, Katrina Kai",
+              },
+                {
+                  name: "Fukrey-3",
+                  poster: "https://images.hindustantimes.com/img/2023/01/24/1600x900/fukrey_3_1674546968737_1674546968963_1674546968963.jpg",
+                  summary: "The new posters of Fukrey 3 are out and confirm the return of the original cast of Richa Chadha, Pulkit Samrat, Varun Sharma, Manjot Singh and Pankaj Tripathi",
+                },
   ];
   return (
   <>
