@@ -1,5 +1,7 @@
-import { Counter } from './Counter';
+import { MovieList } from './MovieList';
 import './App.css';
+import { useState } from 'react';
+import Button from '@mui/material/Button';
 
 function App() {
   const movies=[
@@ -53,31 +55,52 @@ function App() {
                   summary: "The new posters of Fukrey 3 are out and confirm the return of the original cast of Richa Chadha, Pulkit Samrat, Varun Sharma, Manjot Singh and Pankaj Tripathi",
                 },
   ];
+  const [movieList, setMovieList] = useState(movies);
+  const [name, setName] = useState("");
+  const [poster, setPoster] = useState("");
+  const [summary, setSummary] = useState("");
+
   return (
   <>
+  <div className='add-movie-form'>
+   <input 
+    value={name}
+    onChange={(event)=>setName(event.target.value)}
+    placeholder='Enter name'
+   />
+
+<input 
+    value={poster}
+    onChange={(event)=>setPoster(event.target.value)}
+    placeholder="Enter poster link"
+   />
+
+<input 
+    value={summary}
+    onChange={(event)=>setSummary(event.target.value)}
+    placeholder='Enter summary'
+   />
+  
+   <Button onClick={()=>{
+    const newMovie={
+      name,
+      poster,
+      summary,
+    };
+    console.log(newMovie);
+    setMovieList([...movieList, newMovie]);
    
-    <div className="movie-list">
-    {movies.map(({name , poster, summary})=>(
-      <Movie name={name} poster={poster} summary={summary}/>
-    ))}
+
+    
+   }} variant="outlined">Add Movie</Button>
+
    
-    </div>
+       
+   </div>
+   <MovieList movies={movieList} setMovieList={setMovieList}/>
     </>
     );
   }
 
-function Movie({name , poster, summary}){
-  return(
-    <>
-    <div className="movie-container">
-  <img src={poster} className="movie-poster" alt="" />
-  <div className='mx-2 my-3'>
-  <h3 className='movie-name'><i>{name}</i></h3>
-  <p className='movie-summery my-1'>{summary}</p>
-  <Counter />
-  </div>
-</div>
-  </>
- );
-}
+
 export default App;
