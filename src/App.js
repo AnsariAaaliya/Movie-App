@@ -2,8 +2,17 @@ import { MovieList } from './MovieList';
 import './App.css';
 import { useState } from 'react';
 import Button from '@mui/material/Button';
+import {TextField } from '@mui/material';
 
-function App() {
+import{
+  
+  Routes,
+  Route,
+  Link,
+  Navigate,
+  useNavigate,
+}from "react-router-dom"
+export default function App() {
   const movies=[
     {
     name: <a className="co" href="https://www.bing.com/ck/a?!&&p=c93094c9dde75799JmltdHM9MTY5MjMxNjgwMCZpZ3VpZD0zOWU5ZDU3NC1lOWZlLTYzYmYtMjk5NS1jNzVhZTg2NTYyNjImaW5zaWQ9NTIzNg&ptn=3&hsh=3&fclid=39e9d574-e9fe-63bf-2995-c75ae8656262&psq=gadar+2&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2FkYXJfMg&ntb=1">Gadar-2</a>,
@@ -56,51 +65,101 @@ function App() {
                 },
   ];
   const [movieList, setMovieList] = useState(movies);
-  const [name, setName] = useState("");
-  const [poster, setPoster] = useState("");
-  const [summary, setSummary] = useState("");
-
+ 
   return (
   <>
-  <div className='add-movie-form'>
-   <input 
-    value={name}
-    onChange={(event)=>setName(event.target.value)}
-    placeholder='Enter name'
-   />
+   <nav className='nav'>
+    <Link to="/">Home</Link>
+    <Link to="/movies">Movies</Link>
+    <Link to="/films">Films</Link>
 
-<input 
-    value={poster}
-    onChange={(event)=>setPoster(event.target.value)}
-    placeholder="Enter poster link"
-   />
-
-<input 
-    value={summary}
-    onChange={(event)=>setSummary(event.target.value)}
-    placeholder='Enter summary'
-   />
-  
-   <Button onClick={()=>{
-    const newMovie={
-      name,
-      poster,
-      summary,
-    };
-    console.log(newMovie);
-    setMovieList([...movieList, newMovie]);
-   
-
+    <Link to="/addmovies">AddMovie</Link>
     
-   }} variant="outlined">Add Movie</Button>
+  </nav>
+ 
 
-   
-       
-   </div>
-   <MovieList movies={movieList} setMovieList={setMovieList}/>
+
+  
+  
+
+   <Routes>
+
+    <Route exact path="/" element={<Home />}>
+    </Route>
+    <Route  path="/movies" element={<MovieList movies={movieList} setMovieList={setMovieList}/>
+}>
+    </Route>
+    <Route  path="/films" element={<Navigate to="/movies" />
+}>
+    </Route>
+    
+    <Route path="/addmovies" element={<AddMovie movieList={movieList} setMovieList={setMovieList} />}>
+   </Route>
+
+   <Route path="*" element={<NotFound />} />
+  </Routes>
     </>
     );
   }
 
+  function NotFound(){
+    return <img src="https://www.smokeylemon.com/assets/blog-images/404-error__ResizedImageWzY0MCw0ODBd.gif" className='image' alt=""/>
+  }
+  function AddMovie({movieList , setMovieList}){
+    
+    const [name, setName] = useState("");
+    const [poster, setPoster] = useState("");
+    const [summary, setSummary] = useState("");
+    const navigate = useNavigate();
+    return   <div className='add-movie-form container mx-5 my-5'>
+    <TextField 
+     value={name}
+     onChange={(event)=>setName(event.target.value)}
+     label='Enter name'
+     variant='standard'
+    />
+ 
+ <TextField 
+     value={poster}
+     onChange={(event)=>setPoster(event.target.value)}
+     label='Enter poster link'
+     variant='standard'
+    />
+ 
+ <TextField 
+     value={summary}
+     onChange={(event)=>setSummary(event.target.value)}
+     label='Enter summary'
+     variant='standard'
+    />
+   
+    <Button onClick={()=>{
+     const newMovie={
+       name,
+       poster,
+       summary,
+     };
+     console.log(newMovie);
+     setMovieList([...movieList, newMovie]);
+    
+     navigate("/movies")
+     
+    }} variant="outlined">Add Movie</Button>
+ 
+    
+        
+    </div>
+  }
 
-export default App;
+   function Home(){
+    
+      return <div className='home'>
+        <h1>Hello,<br></br> Welcome to my <br/>Movie App</h1>;
+      </div>
+      
+    
+
+  }
+
+
+

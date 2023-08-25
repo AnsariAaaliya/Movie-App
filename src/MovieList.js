@@ -1,7 +1,16 @@
+import { IconButton } from "@mui/material";
 import { Movie } from "./Movie";
-import Button from '@mui/material/Button';
+import  DeleteIcon  from "@mui/icons-material/Delete";
+
 
 export function MovieList({movies ,setMovieList}){
+  const deleteMovie =(index) => {
+    console.log("deletethe movie");
+            const deleteIndex =index;
+            const remainingMovies =movies.filter((mv, idx)=> deleteIndex !== idx);
+            console.log(movies,remainingMovies)
+            setMovieList(remainingMovies);
+  }
     return(
         <>
         
@@ -10,16 +19,12 @@ export function MovieList({movies ,setMovieList}){
       <Movie 
       key={index}
       deleteButton={
-        <Button     
-        onClick={()=>{
-            console.log("deletethe movie");
-            const deleteIndex =index;
-            const remainingMovies =movies.filter((mv, idx)=> deleteIndex !== idx);
-            console.log(movies,remainingMovies)
-            setMovieList(remainingMovies);   
-        }
-        } variant="outlined">Delete 
-        The Movie</Button>
+        <IconButton aria-label="delete movie"
+        color="error"  
+           
+        onClick={()=> deleteMovie(index)
+        }><DeleteIcon  /> 
+        </IconButton>
     }
       
       name={name} 
