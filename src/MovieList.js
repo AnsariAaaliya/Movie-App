@@ -26,7 +26,7 @@ export function MovieList({movies ,setMovieList}){
         }><DeleteIcon  /> 
         </IconButton>
     }
-      
+      id={index}
       name={name} 
       poster={poster} 
       summary={summary}
