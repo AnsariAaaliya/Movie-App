@@ -24,6 +24,9 @@ export function Navbar(){
         <li className="nav-item">
           <Link className="nav-link wh" to="/addmovies">AddMovie</Link>
         </li>
+        <li className="nav-item">
+          <Link className="nav-link wh" to="/tictactoe">TicTacToe</Link>
+        </li>
      
         
       </ul>

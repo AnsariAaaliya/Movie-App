@@ -150,3 +150,33 @@
   border-radius: 5px;
   position:static;
 }
+.game-box{
+  border: 1px solid black;
+  height: 8rem;
+  width: 8rem;
+  font-size: 7rem;
+  display: flex;
+justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ cursor: pointer;
+ 
+}
+.game-box:hover{
+  background-color: rgba(0, 0, 0, 0.233);
+}
+.board{
+    margin: 2rem;
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  width: min-content;
+  
+}
+.tic-tac-toe{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 64px - 64px);
+  gap: 1rem;
+}
