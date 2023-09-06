@@ -1,5 +1,5 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import { Link } from 'react-router-dom';
 export function Navbar(){
     return(
         <>
@@ -27,11 +27,15 @@ export function Navbar(){
         <li className="nav-item">
           <Link className="nav-link wh" to="/tictactoe">TicTacToe</Link>
         </li>
-     
+        <li className="nav-item">
+          <button className="nav-link wh" to="/tictactoe">Dark-them</button>
+        </li>
+    
         
       </ul>
      
     </div>
+   
   </div>
 </nav>
 

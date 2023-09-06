@@ -1,11 +1,20 @@
 import { IconButton } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Badge } from "@mui/material";
 
 export function Counter(){
     const [like,setLike]= useState(0);
     const [dislike,setDisLike]= useState(0);
+useEffect(()=>{
+    console.log("like is changed", like);
+    //with help of useEffect the whole props and state will be changed and because of it here like and dislike both are calles
+});
 
+useEffect(()=>{
+    console.log("like is changed", like);
+    console.log("like is changed", like);
+    //here onlu callesd like beacuse of we passed the dependency array
+},[like]);
     return(
         <>
         <div className="counter-container">

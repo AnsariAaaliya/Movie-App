@@ -4,14 +4,14 @@ import { Counter } from "./Counter";
 import { Card, IconButton,} from "@mui/material";
 import { Info } from "@mui/icons-material";
 
-export function Movie({name, poster, summary,deleteButton,id}){
+export function Movie({name, poster, summary,deleteButton,editButton,id}){
    const navigate = useNavigate();
     return(
         <>
         <Card className="movie-container">
   <img src={poster} className="movie-poster" alt="" />
   <div className='mx-2 my-3'>
-  <h3 className='movie-name co'><i>{name}</i>
+  <h3 className='movie-name'><i>{name}</i>
   <IconButton
     onClick={()=>navigate(`/movies/${id}`)}
     color="primary"
@@ -25,6 +25,7 @@ export function Movie({name, poster, summary,deleteButton,id}){
   <Counter />
   
         {deleteButton}
+        {editButton}
         </div>
   
 

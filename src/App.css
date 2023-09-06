@@ -58,7 +58,7 @@
 .movie-name{
   font-size: 24px;
   margin: 0;
-  color: black;
+  
 }
 
 .movie-spaces{
@@ -97,9 +97,7 @@
   height: 30px;
 }
 
-.co{
-  color: black;
-}
+
  
 .add-movie-form{
   display: flex;
@@ -130,7 +128,7 @@
   padding-top: 5%;
   margin-left: 27%;
   margin-top: 5%;
-  color:rgb(66, 63, 64);
+  color:rgb(138, 74, 95);
   font-family:cursive;
 
 }
@@ -143,15 +141,14 @@
   max-width: 45rem;
   padding: 24px;
 }
-.wh{
-  color: white;
-}
+
+
 .border{
   border-radius: 5px;
   position:static;
 }
 .game-box{
-  border: 1px solid black;
+  border: 2px solid;
   height: 8rem;
   width: 8rem;
   font-size: 7rem;
